@@ -79,31 +79,6 @@ def nonexisting_user_movie_recommend(liked_movies, disliked_movies, rbm):
 
     return np.array(good_recommendation), np.array(bad_recommendation), np.array(good_recommendation_id), np.array(bad_recommendation_id)
 
-
-# def nonexisting_user_movie_recommend(liked_movies, disliked_movies, rbm):
-#     movies_list = movies['movie_name']
-#     bad_recommendation = {'movie_id_id': [], 'movie_name' : []}
-#     good_recommendation = {'movie_id_id': [], 'movie_name' : []}
-
-#     ratingslist = new_user_rating_populate(liked_movies, disliked_movies)
-#     ratingslist = torch.FloatTensor(np.array(ratingslist))
-#     ratingslist = torch.unsqueeze(ratingslist, 0)
-#     _,hid = rbm.sample_h(ratingslist)
-#     _,res = rbm.sample_v(hid)
-
-#     for id_movie in range(nb_movies):
-#         movie = movies_list[id_movie]
-#         idx = movies.loc[movies['movie_name'] == movie, 'movie_id_id'].iloc[0]
-#         if ratingslist[0][id_movie] < 0.0:
-#             if res[0][id_movie] == 1:
-#                 good_recommendation['movie_id_id'].append(idx)
-#                 good_recommendation['movie_name'].append(movie)
-#             else:
-#                 bad_recommendation['movie_id_id'].append(idx)
-#                 bad_recommendation['movie_name'].append(movie)
-
-#     return good_recommendation, bad_recommendation
-
 def arg_claim(sys_arg):
     arg = sys_arg
     arr = [int(n) for n in arg.split(",")]
@@ -118,8 +93,6 @@ rbm = pickle.load(open(filename, 'rb'))
 good_reco, bad_reco, good_id, bad_id = nonexisting_user_movie_recommend(liked, disliked, rbm)
 recommendations = pd.DataFrame({'movie_id_id':good_id, 'movie_name': good_reco})
 
-# good_reco, bad_reco = nonexisting_user_movie_recommend(liked, disliked, rbm)
-# recommendations = pd.DataFrame(good_reco)
 print(recommendations)
 
 recommendations_dict = recommendations.to_dict('records')

@@ -59,7 +59,6 @@ app.post('/recommend-request', async (req, res) =>  {
     updatedRecommendation = false
     const {liked, disliked} = req.body
     await runner.predict(liked, disliked)
-    // await runner.predict([12,4], [19])
     const recommendations = execSync(`python -c "${loadrecommendations}"`).toString()
     const deserilazedmovierecommendations = JSON.parse(recommendations)
     movieRecommendation = deserilazedmovierecommendations
