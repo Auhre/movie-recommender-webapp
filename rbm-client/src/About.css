@@ -1,0 +1,125 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 97vw;
+    height: 100vh;
+    float: left;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    overflow: scroll;
+    justify-content: center;
+    z-index: 999;
+}
+
+.primary {
+    width: 38vw;
+    height: 100vh;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-type: mandatory;
+}
+
+.secondary {
+    width: 53vw;
+    height: 90vh;
+    float: right;
+    background: transparent;
+    padding: 2vw;
+}
+
+.image-container {
+    width: 38vw;
+    height: 99vh;
+    overflow: scroll;
+}
+
+.neural-net-gif {
+    width: 34vw; 
+    height: 100vh;
+    object-fit:contain; 
+}
+
+.primary-header {
+    width: 36vw;
+    height: auto;
+    display: flex;
+    background: transparent;
+}
+
+.secondary-header {
+    width: 53vw;
+    height: auto;
+    display: grid;
+    background: transparent;
+}
+
+.secondary-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+}
+
+.mode-toggle-on-darkmode {
+    float: right;
+    width: 6vw;
+    margin-left:24vw;
+    border-radius: 2px;
+    border-color: white;
+    padding: 3px 7px 7px 7px;
+    font-family: "Tahoma",  sans-serif;
+    color: white;
+    background: linear-gradient(45deg, rgba(49,49,49,1) 0%, rgba(44,46,46,1) 50%, rgba(0,0,0,1) 100%);
+    cursor: pointer;
+}
+
+.mode-toggle-on-lightmode {
+    float: right;
+    width: 6vw;
+    margin-left:24vw;
+    border-radius: 2px;
+    border-color: black;
+    padding: 3px 7px 7px 7px;
+    font-family: "Tahoma",  sans-serif;
+    color: black;
+    background: linear-gradient(45deg, rgb(228, 227, 227) 0%, rgb(201, 204, 204) 50%, rgb(156, 155, 155) 100%);
+    cursor: pointer;
+}
+
+.header-text {
+    font-size: 34px;
+    width: 20vw;
+    color: #6f6f6e; 
+    font-family: "Tahoma",  sans-serif;
+    float: left;
+    padding: 2px 8px 8px 8px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.about-rbm {
+    margin-top: 2vh;
+    padding: 10px 10px 10px 10px;
+    color: #6f6f6e; 
+    font-size: 14px;
+    text-align: justify;
+}
+
+.about-creator-wrapper {
+    margin-top: 6vh;
+}
+.about-creator {
+    padding: 3px 10px 3px 3px;
+    color: #6f6f6e; 
+    font-size: 10px;
+    text-align: right;
+}
+.creator-link {
+    padding: 2px 2px 2px 2px;
+}
